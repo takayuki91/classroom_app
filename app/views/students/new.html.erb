@@ -1,0 +1,20 @@
+<h1>Students#new</h1>
+<p>Find me in app/views/students/new.html.erb</p>
+
+<%= form_with model: @student, url: '/students' , method: :post do |f| %>
+  <div>
+    <%= f.label :family_name %>
+    <%= f.text_field :family_name %>
+  </div>
+
+  <div>
+    <%= f.label :gender, '女性' %>
+    <%= f.radio_button :gender, Student.genders.key(0) %>
+    <%= f.label :gender, '男性' %>
+    <%= f.radio_button :gender, Student.genders.key(1) %>
+  </div>
+
+  <div>
+    <%= f.submit "登録" %>
+  </div>
+<% end %>
